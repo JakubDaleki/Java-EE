@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view>
+        <h:head>
+            <meta charset="UTF-8"/>
+            <meta name="description" content="Simple web application"/>
+            <meta name="keywords" content="JEE"/>
+            <meta name="author" content="Jakub Daleki"/>
+            <title>Laboratorium JEE</title>
+            <h:outputStylesheet library="default" name="css/styles.css"/>
+        </h:head>
+        <h:body>
+            <div class="container">
+                <header class="header">
+                    <h1><h:graphicImage name="images/logo.jpg" alt="logo" height="30" width="30"/> Laboratorium JEE</h1>
+                </header>
+                <nav class="navigation-bar">
+                    <ul>
+                        <li><h:link outcome="/index.xhtml">main</h:link></li>
+                        <li><h:link outcome="/restaurants/restaurant_list.xhtml">Restauracje</h:link></li>
+                    </ul>
+                </nav>
+
+                <section class="main-section">
+                    <ui:insert name="content"/>
+                </section>
+
+                <footer class="footer">
+                    <p>Copyright &#169; 2020, Jakub Daleki</p>
+                </footer>
+            </div>
+        </h:body>
+    </f:view>
+</html>

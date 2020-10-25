@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                template="/WEB-INF/template/main.xhtml">
+    <f:metadata>
+        <f:viewAction action="#{mealAdd.init()}"/>
+    </f:metadata>
+
+    <ui:define name="content">
+        <h:panelGroup layout="block">
+            <h:outputStylesheet library="character" name="css/character_edit.css"/><!-- Automatically relocated to head. -->
+            <article class="text--justified">
+                <header><h2>Dodaj danie</h2></header>
+                <h:form class="character__form">
+                    <h:outputLabel for="restaurant" value="Restauracja"/>
+                    <h:selectOneMenu id="restaurant" styleClass="form-control" value="#{mealAdd.restaurant}">
+                        <f:selectItems value="#{mealAdd.restaurants}" var="restaurant" itemValue="#{restaurant}"
+                                       itemLabel="#{restaurant.name}" itemLabelEscaped="false"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel for="name" value="Nazwa:"/>
+                    <h:inputText class="ui-control ui-input" id="name" value="#{mealAdd.name}"/>
+                    <h:outputLabel for="category" value="Kategoria:"/>
+                    <h:inputText class="ui-control ui-input" id="category" value="#{mealAdd.category}"/>
+                    <h:outputLabel for="price" value="Cena:"/>
+                    <h:inputText class="ui-control ui-input" id="price" value="#{mealAdd.price}"/>
+                    <h:commandButton class="ui-control ui-button" value="Dodaj" action="#{mealAdd.addAction()}"/>
+                </h:form>
+            </article>
+        </h:panelGroup>
+    </ui:define>
+
+</ui:composition>
